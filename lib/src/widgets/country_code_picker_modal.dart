@@ -68,16 +68,11 @@ class _CountryCodePickerModalState extends State<CountryCodePickerModal> {
   @override
   void initState() {
     super.initState();
-    itemScrollController = ItemScrollController();
-  }
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
     _initCountries();
   }
 
   Future<void> _initCountries() async {
+    itemScrollController = ItemScrollController();
     final allCountryCodes = codes.map(CountryCode.fromMap).toList();
 
     final favoriteList = <CountryCode>[
